@@ -1,0 +1,22 @@
+﻿//EVALUATE{
+//VAR A = HR_Analytics
+//VAR B = COUNT(HR_Analytics[EmpID])
+//RETURN
+//B}
+//EVALUATE{
+//VAR A  = HR_Analytics
+//VAR B = FILTER(A,HR_Analytics[Attrition] = "YES")
+//VAR C = COUNTX(B,HR_Analytics[EmpID])
+//RETURN
+//C}
+
+EVALUATE{
+VAR A  = HR_Analytics
+VAR B = FILTER(A,HR_Analytics[Attrition] = "YES")
+VAR C = COUNTX(B,HR_Analytics[EmpID])
+VAR D = COUNTX(A,HR_Analytics[EmpID])
+VAR E = C/D
+
+RETURN
+E}
+
